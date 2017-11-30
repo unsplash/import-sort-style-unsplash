@@ -1,5 +1,5 @@
 {
-  "name": "import-sort-style-module",
+  "name": "import-sort-style-unsplash",
   "version": "3.0.0",
   "description": "An import-sort style that groups and sorts by module",
   "main": "lib/index.js",
