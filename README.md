@@ -1,4 +1,4 @@
-# import-sort-style-module
+# import-sort-style-unsplash
 
 A style for [import-sort](https://github.com/renke/import-sort) that is focused
 on modules.
@@ -22,6 +22,10 @@ import * as path from "path";
 import aa from "aa";
 import bb from "bb";
 import cc from "cc";
+
+// Component modules sorted by name
+import bar from "components/bar";
+import foo from "components/foo";
 
 // First-party modules sorted by "relative depth" and then by name
 import aaa from "../../aaa";
