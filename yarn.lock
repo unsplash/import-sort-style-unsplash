@@ -153,6 +153,10 @@ has-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-1.0.0.tgz#9d9e793165ce017a00f00418c43f942a7b1d11fa"
 
+import-sort-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/import-sort-parser/-/import-sort-parser-3.0.0.tgz#9e7543087188b065ded909b40caae440d3c7a2a6"
+
 import-sort-style@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/import-sort-style/-/import-sort-style-3.0.0.tgz#2210b9db54259055429f9b86235e7670e85509d7"
