@@ -1,4 +1,5 @@
 import {IStyleAPI, IStyleItem} from "import-sort-style";
+import { IImport } from "import-sort-parser";
 
 export default function(styleApi: IStyleAPI): Array<IStyleItem> {
   const {
@@ -13,6 +14,8 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
     naturally,
     unicode,
   } = styleApi;
+  const isComponentsFolder = (imported: IImport) => imported.moduleName.startsWith("components/");
+  const isNotComponentsFolder = (imported: IImport) => !isComponentsFolder(imported);
 
   return [
     // import "foo"
@@ -28,8 +31,15 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
     {separator: true},
 
     // import … from "foo";
-    {match: isAbsoluteModule, sort: moduleName(naturally), sortNamedMembers: alias(unicode)},
-    {separator: true},
+    {
+      match: and(isAbsoluteModule, isNotComponentsFolder),
+      sort: moduleName(naturally),
+      sortNamedMembers: alias(unicode),
+    },
+    { separator: true },
+
+    // import … from "components/foo";
+    { match: isComponentsFolder, sort: moduleName(naturally), sortNamedMembers: alias(unicode) },
 
     // import … from "./foo";
     // import … from "../foo";
