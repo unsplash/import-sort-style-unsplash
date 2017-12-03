@@ -46,6 +46,7 @@ const style: IStyle = (styleApi: IStyleAPI, file): Array<IStyleItem> => {
 
     // import … from "components/foo";
     { match: isComponentsFolder, sort: moduleName(naturally), sortNamedMembers: alias(unicode) },
+    { separator: true },
 
     // import … from "./foo";
     // import … from "../foo";
