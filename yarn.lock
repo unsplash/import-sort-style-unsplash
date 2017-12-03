@@ -153,13 +153,13 @@ has-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-1.0.0.tgz#9d9e793165ce017a00f00418c43f942a7b1d11fa"
 
-import-sort-parser@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/import-sort-parser/-/import-sort-parser-3.0.0.tgz#9e7543087188b065ded909b40caae440d3c7a2a6"
+import-sort-parser@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/import-sort-parser/-/import-sort-parser-4.2.0.tgz#c8263e2c015e77a554e51b319e0006da488d2937"
 
-import-sort-style@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/import-sort-style/-/import-sort-style-3.0.0.tgz#2210b9db54259055429f9b86235e7670e85509d7"
+import-sort-style@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/import-sort-style/-/import-sort-style-4.2.0.tgz#ab9194424495045b6ab5fe0b51215efe25c4afb8"
 
 inflight@^1.0.4:
   version "1.0.6"
