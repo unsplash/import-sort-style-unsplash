@@ -1,14 +1,16 @@
 import {IStyleAPI, IStyleItem, IStyle} from "import-sort-style";
 import { IImport } from "import-sort-parser";
 
-const style: IStyle = (styleApi: IStyleAPI): Array<IStyleItem> => {
+const style: IStyle = (styleApi: IStyleAPI, file): Array<IStyleItem> => {
   const {
     alias,
     and,
+    or,
     dotSegmentCount,
     hasNoMember,
     isAbsoluteModule,
     isNodeModule,
+    isInstalledModule,
     isRelativeModule,
     moduleName,
     naturally,
@@ -27,7 +29,11 @@ const style: IStyle = (styleApi: IStyleAPI): Array<IStyleItem> => {
     {separator: true},
 
     // import … from "fs";
-    {match: isNodeModule, sort: moduleName(naturally), sortNamedMembers: alias(unicode)},
+    {
+        match: or(isNodeModule, isInstalledModule(file!)),
+        sort: moduleName(naturally),
+        sortNamedMembers: alias(unicode),
+    },
     {separator: true},
 
     // import … from "foo";
