@@ -1,7 +1,7 @@
-import {IStyleAPI, IStyleItem} from "import-sort-style";
+import {IStyleAPI, IStyleItem, IStyle} from "import-sort-style";
 import { IImport } from "import-sort-parser";
 
-export default function(styleApi: IStyleAPI): Array<IStyleItem> {
+const style: IStyle = (styleApi: IStyleAPI): Array<IStyleItem> => {
   const {
     alias,
     and,
@@ -46,4 +46,6 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
     {match: isRelativeModule, sort: [dotSegmentCount, moduleName(naturally)], sortNamedMembers: alias(unicode)},
     {separator: true},
   ];
-}
+};
+
+export default style;
