@@ -16,7 +16,10 @@ const style: IStyle = (styleApi: IStyleAPI, file): Array<IStyleItem> => {
     naturally,
     unicode,
   } = styleApi;
-  const isComponentsFolder = (imported: IImport) => imported.moduleName.startsWith("components/");
+  const isComponentsFolder = (imported: IImport) =>
+    imported.moduleName.startsWith("components/")
+    || imported.moduleName.startsWith("client/components/")
+    || imported.moduleName.startsWith("server/components/");
   const isNotComponentsFolder = (imported: IImport) => !isComponentsFolder(imported);
 
   return [
@@ -44,7 +47,7 @@ const style: IStyle = (styleApi: IStyleAPI, file): Array<IStyleItem> => {
     },
     { separator: true },
 
-    // import … from "components/foo";
+    // import … from "{client/,server/,}components/foo";
     { match: isComponentsFolder, sort: moduleName(naturally), sortNamedMembers: alias(unicode) },
     { separator: true },
 
